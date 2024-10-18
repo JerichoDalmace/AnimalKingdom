@@ -1,0 +1,433 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    text-align: center; /* Center-align all text */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f39c12;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #2c3e50;
+    padding: 20px 75px 35px; /* Adjusted padding */
+    text-align: left; /* Left-align header text */
+    position: relative;
+}
+/* Navigation Bar Styling */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 20px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex; /* Show on larger screens */
+    gap: 20px; /* Space between menu items */
+    margin-left: auto;
+    
+}
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+
+
+
+.nav-list a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #f39c12;
+}
+
+.nav-list li a.active {
+    background-color: #f39c12; /* Change the background color */
+    color: white; /* Change the text color */
+    font-weight: bold; /* Make the text bold */
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide the nav links */
+        flex-direction: column; /* Stack them vertically */
+        position: absolute; /* Positioning for dropdown */
+        background-color: #2c3e50; /* Match the navbar background */
+        top: 60px; /* Position it below the navbar */
+        right: 0; /* Align it to the right */
+        width: 200px; /* Set a width */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+        z-index: 1000; /* Ensure it's on top */
+    }
+
+    .nav-list.show {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+}
+
+
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f39c12;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #e67e22;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        min-width: 100%;
+    }
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+}
+
+#search-input {
+    padding: 15px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #f39c12;
+}
+
+#suggestions {
+    position: absolute;
+    top: 60px; /* Increased space for better visibility */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#suggestions li {
+    padding: 15px; /* Increased padding for suggestions */
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+
+
+.animal-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increased gap between categories */
+    margin-top: 30px; /* Increased margin for spacing */
+}
+
+.animal-categories a {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 25px; /* Increased padding */
+    border-radius: 5px;
+    font-size: 1.3em; /* Increased font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Main Section */
+main {
+    padding: 30px; /* Increased padding for more space */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animal Family Cards */
+.animal-section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.animal-family-card {
+    position: relative;
+    display: inline-block;
+    width: 325px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.animal-family-card::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align with the left */
+    right: 0; /* Align with the right */
+    height: 40%; /* Height of the gradient */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Gradient from black to transparent */
+    z-index: 1; /* Ensure it's behind the text */
+}
+
+.animal-family-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.animal-link {
+    text-decoration: none; /* Remove underline from link */
+    color: #333; /* Set text color */
+}
+
+.animal-image {
+    width: 100%; /* Full width of the card */
+    height: 400px; /* Full height of the card */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+    border-bottom: 1px solid #ccc; /* Border below the image */
+    display: block; /* Block display to avoid inline space */
+}
+
+.animal-family-card:hover .animal-image {
+    transform: scale(1.1); /* Scale down to 90% of original size */
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+.animal-family-card h3,
+.animal-family-card .see-more {
+    position: absolute; /* Absolute positioning */
+    bottom: 10px; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering fix */
+    color: rgba(255, 255, 255, 0.87); /* Text color */
+    z-index: 2; /* Ensure it's on top of the gradient */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animal-family-card {
+        width: 90%; /* Full width on small screens */
+        max-width: 350px; /* Max width to prevent cards from being too wide */
+    }
+
+    .animal-categories {
+        flex-direction: column; /* Stack categories vertically */
+        gap: 10px; /* Smaller gap for vertical alignment */
+    }
+}
+
+/* New Section: Animal Habitats */
+.animal-habitat-section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.animal-habitat-card {
+    position: relative;
+    display: inline-block;
+    width: 325px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.animal-habitat-card::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align with the left */
+    right: 0; /* Align with the right */
+    height: 40%; /* Height of the gradient */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Gradient from black to transparent */
+    z-index: 1; /* Ensure it's behind the text */
+}
+.animal-habitat-card:hover {
+    transform: translateY(-5px);
+}
+
+.animal-habitat-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.animal-habitat-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.87);
+    z-index: 2;
+}
+
+.animal-habitat-card:hover .animal-image {
+    transform: scale(1.1); /* Scale down to 90% of original size */
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+
+/* Global Styles */
+/* Global Styles */
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out; /* Smooth transition effect */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Add any other styling as needed */
+
+
+/* For main content */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.479); /* Semi-transparent background to make content stand out */
+    border-radius: 10px; /* Rounded corners for the main content section */
+}
+
+/* Rest of your CSS */
+
+
+/* Breadcrumbs Styles */
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    max-width: 1200px;
+    padding: 10px;
+    font-size: 1em;
+    margin-right: auto;
+}
+
+.breadcrumbs li {
+    display: inline;
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: #3498db;
+    padding: 5px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs li a:hover {
+    color: #e67e22;
+}
+
+.breadcrumbs li::after {
+    content: ">";
+    padding: 0 10px;
+    color: #7f8c8d;
+}
+
+.breadcrumbs li:last-child::after {
+    content: ""; /* No arrow after the last item */
+}
+
+.breadcrumbs li:last-child {
+    color: #2c3e50;
+}
+
