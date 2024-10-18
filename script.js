@@ -4,11 +4,11 @@
 
 // Array of background images
 const backgroundImages = [
-    '/images/bg1.png',
-    '/images/bg2.jfif',
-    '/images/bg3.jpg',
-    '/images/bg4.jpg',
-    '/images/bg5.jpg',
+    'images/bg1.png',
+    'images/bg2.jfif',
+    'images/bg3.jpg',
+    'images/bg4.jpg',
+    'images/bg5.jpg',
 ];
 
 // Function to change the background image
