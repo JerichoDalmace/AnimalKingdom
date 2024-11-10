@@ -46,3 +46,38 @@ document.getElementById("hamburger").addEventListener("click", function() {
     const navList = document.getElementById("nav-list");
     navList.classList.toggle("show"); // Toggle the show class
 });
+
+// Get the buttons and card container
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const cards = document.querySelectorAll('.card');
+
+// Set the initial card index to 0 (first card)
+let currentCardIndex = 0;
+
+// Show the first card by adding the 'show' class
+cards[currentCardIndex].classList.add('show');
+
+// Next button functionality
+nextBtn.addEventListener('click', () => {
+    // Hide the current card
+    cards[currentCardIndex].classList.remove('show');
+
+    // Increment the index to show the next card
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
+
+    // Show the next card
+    cards[currentCardIndex].classList.add('show');
+});
+
+// Previous button functionality
+prevBtn.addEventListener('click', () => {
+    // Hide the current card
+    cards[currentCardIndex].classList.remove('show');
+
+    // Decrement the index to show the previous card
+    currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+
+    // Show the previous card
+    cards[currentCardIndex].classList.add('show');
+});

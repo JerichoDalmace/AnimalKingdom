@@ -476,14 +476,15 @@ body {
 }
 
 /* Styling for text inside the card */
-.card-text {
+.card-text {    
+    font-size: 1.3em;
     text-align: left;
     max-width: 60%;
 }
 
 /* Styling for the title */
 .card h3 {
-    font-size: 1.2em;
+    font-size: 2em;
     color: #333;
     margin-bottom: 10px;
 }
