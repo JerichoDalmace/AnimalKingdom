@@ -17,8 +17,8 @@ let currentIndex = 0;
 function changeBackground() {
     const bodyElement = document.body;
     
-    // Change the background image by cycling through the array
-    bodyElement.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+    // Set the background image to the pseudo-element via CSS
+    bodyElement.style.setProperty('--background-image', `url('${backgroundImages[currentIndex]}')`);
     
     // Update the index, and reset if it exceeds the number of images
     currentIndex = (currentIndex + 1) % backgroundImages.length;

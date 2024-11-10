@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: rgba(245, 245, 220,);;
     color: #333;
     text-align: center; /* Center-align all text */
     width: 100%;    /* Full width */
@@ -16,6 +16,22 @@ body {
     padding: 0;     /* Remove default padding */
     overflow-x: hidden;
 }
+
+body::before {
+    content: '';
+    position: fixed; /* Use fixed positioning so it stays in place when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--background-image); /* Use the CSS custom property for the background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensure the background stays fixed */
+    filter: blur(3px); /* Apply blur to the background */
+    z-index: -1; /* Ensure it's behind all content */
+}
+
 
 a {
     text-decoration: none;
@@ -161,46 +177,6 @@ nav {
     }
 }
 
-/* Search Bar */
-.search-container {
-    position: relative;
-}
-
-#search-input {
-    padding: 15px; /* Increased padding */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-#search-input:focus {
-    border-color: #f39c12;
-}
-
-#suggestions {
-    position: absolute;
-    top: 60px; /* Increased space for better visibility */
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-}
-
-#suggestions li {
-    padding: 15px; /* Increased padding for suggestions */
-    cursor: pointer;
-}
-
-#suggestions li:hover {
-    background-color: #f39c12;
-    color: white;
-}
-
-
 
 .animal-categories {
     display: flex;
@@ -224,24 +200,25 @@ main {
     padding: 30px;
     width: 100%; /* Use full width of the viewport */
     margin: 0 auto;
-    background-color: rgba(245, 245, 255, 0.479); /* Semi-transparent background to make content stand out */
+    background-color: rgba(245, 245, 220,); /* Semi-transparent background to make content stand out */
     border-radius: 10px; /* Rounded corners for the main content section */
 }
 
 /* Animal Family Cards */
 .animal-section {
     padding: 30px;
-    max-width: 1800px;
+    max-width: 2000px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
+
 .animal-family-card {
     position: relative;
     display: inline-block;
-    width: 325px;
+    width: 600px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -309,7 +286,7 @@ main {
 /* New Section: Animal Habitats */
 .animal-habitat-section {
     padding: 30px;
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -320,7 +297,7 @@ main {
 .animal-habitat-card {
     position: relative;
     display: inline-block;
-    width: 325px;
+    width: 600px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -432,8 +409,8 @@ body {
 /* Video Container */
 .video-container {
     position: relative;
-    width: 1200px; /* Set width to 1200px */
-    height: 600px; /* Set height to 600px */
+    width: 1600px; /* Set width to 1200px */
+    height: 900px; /* Set height to 600px */
     margin: 0 auto; /* Center the container */
     overflow: hidden;
 }
@@ -463,7 +440,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 60px;
-    max-width: 1500px;
+    max-width: 1800px;
     width: 100%;
     transition: transform 0.2s;
 }
