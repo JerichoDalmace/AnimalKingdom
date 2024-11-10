@@ -199,6 +199,7 @@ nav {
 main {
     padding: 30px;
     width: 100%; /* Use full width of the viewport */
+    height: auto;
     margin: 0 auto;
     background-color: rgba(245, 245, 220,); /* Semi-transparent background to make content stand out */
     border-radius: 10px; /* Rounded corners for the main content section */
@@ -219,6 +220,7 @@ main {
     position: relative;
     display: inline-block;
     width: 30%;
+    aspect-ratio: 3/2;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -298,6 +300,7 @@ main {
     position: relative;
     display: inline-block;
     width: 30%;
+    aspect-ratio: 3/2;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -409,8 +412,8 @@ body {
 /* Video Container */
 .video-container {
     position: relative;
-    width: 1600px; /* Set width to 1200px */
-    height: 900px; /* Set height to 600px */
+    width: 80%; /* Set width to 1200px */
+    aspect-ratio: 3/2; /* Set height to 600px */
     margin: 0 auto; /* Center the container */
     overflow: hidden;
 }
@@ -441,7 +444,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 60px;
     max-width: 1800px;
-    width: 100%;
+    width: 85%;
+    aspect-ratio: 4/1;
     transition: transform 0.2s;
 }
 
@@ -477,6 +481,7 @@ body {
 /* Image styling */
 .card-image {
     width: 30%;
+    aspect-ratio: 3/2;
     max-width: 380px;
     border-radius: 4px;
     object-fit: cover;
